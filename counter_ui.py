@@ -155,5 +155,5 @@ class Ui_MainWindow(object):
         self.NUM_10.setText(_translate("MainWindow", "#"))
         self.dot.setText(_translate("MainWindow", "."))
         self.equal.setText(_translate("MainWindow", "="))
-        self.label.setText(_translate("MainWindow", "<A href = \'www.baidu.com\'>关于本计算器</a>"))
+        self.label.setText(_translate("MainWindow", "<A href = \'https://github.com/TTowFive/Counter\'>关于本计算器</a>"))
 
