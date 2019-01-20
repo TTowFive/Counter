@@ -2,7 +2,6 @@ import sys
 from PyQt5 import QtWidgets
 from counter_ui import Ui_MainWindow
 import time
-import threading
 import sys
 
 display_num_store = [] # 数字中转
@@ -11,7 +10,7 @@ FinallNum_fomal = []    #前一位数
 Final_result = 0
 i = 0
 k = 0
-SYMBOL = ''
+SYMBOL = ''     #定义符号的存储
 
 class counter(Ui_MainWindow,QtWidgets.QMainWindow):
 
@@ -36,23 +35,23 @@ class counter(Ui_MainWindow,QtWidgets.QMainWindow):
                     FinallNum = float(FinallNum)
                 except:
                     print('continue')
-            if SYMBOL == '+':
+            if SYMBOL == '+':   #加
                 re = FinallNum_fomal + FinallNum
                 self.result.setText(str(re))
                 self.symbol.setText('')
                 FinallNum_fomal = re
                 print(FinallNum_fomal)
-            if SYMBOL == '-':
+            if SYMBOL == '-':       #减
                 re = FinallNum_fomal - FinallNum
                 self.result.setText(str(re))
                 self.symbol.setText('')
                 FinallNum_fomal = re
-            if SYMBOL == 'X':
+            if SYMBOL == 'X':       #乘
                 re = FinallNum_fomal * FinallNum
                 self.result.setText(str(re))
                 self.symbol.setText('')
                 FinallNum_fomal = re
-            if SYMBOL == '/':
+            if SYMBOL == '/':       #除
                 if FinallNum == 0:
                     QtWidgets.QMessageBox.question(self, u'警告', u'"零不能作为被除数"',
                                                    QtWidgets.QMessageBox.Yes |
